@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+header .site-name a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.tabs-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    overflow: hidden; /* Prevent tabs from overflowing */
+    width: 100%;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+    flex-shrink: 1; /* Allow the tab to shrink */
+    flex-grow: 0; /* Don't allow the tab to grow */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.tab:hover {
+    background-color: #ddd;
+}
+
+.reviews {
+    padding: 20px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.reviews.movies {
+    background-color: #f3f3f3;
+}
+
+.reviews.books {
+    background-color: #e0f7fa;
+}
+
+.reviews.biscuits {
+    background-color: #ffecb3;
+}
+
+/* Adjust styles for the tab container and content when they are active */
+.reviews.active {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.tab.active {
+    background-color: transparent;
+    border-bottom: none;
+    z-index: 1;
+}

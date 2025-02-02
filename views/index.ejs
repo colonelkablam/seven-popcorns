@@ -1,0 +1,38 @@
+<%- include('partials/head') %>
+
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <div class="tabs-container">
+            <button class="tab" id="movies" onclick="changeTab('movies')">Movies</button>
+            <button class="tab" id="books" onclick="changeTab('books')">Books</button>
+            <button class="tab" id="biscuits" onclick="changeTab('biscuits')">Biscuits</button>
+        </div>
+
+        <div class="reviews" id="reviews">
+            <!-- Dynamic content for reviews goes here -->
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script>
+        function changeTab(tab) {
+            const reviews = document.getElementById('reviews');
+            const tabs = document.querySelectorAll('.tab');
+            
+            // Remove active class from all tabs and reviews
+            tabs.forEach(tab => tab.classList.remove('active'));
+            reviews.classList.remove('movies', 'books', 'biscuits', 'active');
+            
+            // Add active class to the selected tab and content box
+            const selectedTab = document.getElementById(tab);
+            selectedTab.classList.add('active');
+            reviews.classList.add(tab, 'active');
+            
+            // Update the content below the tab
+            reviews.innerHTML = `<h2>${tab.charAt(0).toUpperCase() + tab.slice(1)} Reviews</h2>`;
+        }
+    </script>
+</body>
